@@ -14,7 +14,22 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Entity
  * @ApiResource(
- *     iri="http://schema.org/Book"
+ *     iri="http://schema.org/Book",
+ *     attributes={
+ *         "rollerworks_search"={
+ *             "contexts"={
+ *                 "_any"={
+ *                     "fieldset" = "AppBundle\Search\FieldSet\BookFieldSet",
+ *                     "doctrine_orm"={
+ *                         "mappings" = {
+ *                             "id" = "id",
+ *                             "title" = "title"
+ *                         }
+ *                     }
+ *                 }
+ *             }
+ *         }
+ *     }
  * )
  */
 class Book
