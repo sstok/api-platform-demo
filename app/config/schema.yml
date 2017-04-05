@@ -3,13 +3,13 @@ types:
         parent: false
         properties:
             isbn: ~
-            name: { nullable: false }
+            title: { nullable: false }
             description: { nullable: false }
             author: { range: Text, nullable: false }
-            dateCreated: { nullable: false }
+            publicationDate: { nullable: false }
     Review:
         parent: false
         properties:
             reviewBody: ~
             rating: { range: Integer, nullable: false } # This is a custom field that doesn't exist in the vocab
-            itemReviewed: { range: Book, nullable: false, cardinality: '(*..1)' }
+            book: { range: Book, nullable: false, cardinality: '(*..1)' }
